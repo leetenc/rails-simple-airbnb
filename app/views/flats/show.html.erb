@@ -1,0 +1,20 @@
+<div class='mx-4 py-4'>
+  <h1>
+    <%= @flat.name %>
+  </h1>
+  <p><%= @flat.address %></p>
+  <p><%= @flat.description %></p>
+  <p>$<%= @flat.price_per_night %></p>
+
+  <p><%= '🕺' * @flat.number_of_guests %></p>
+
+  <%= link_to 'Edit', edit_flat_path(@flat.id) %>
+
+  <%= link_to flat_path(@flat),
+      method: :delete,
+      data: { confirm: "Are you sure?" } do %>
+          <i class="far fa-trash-alt"></i>
+      <% end %>
+
+  <%= link_to 'Back to flat list', flats_path %>
+</div>
